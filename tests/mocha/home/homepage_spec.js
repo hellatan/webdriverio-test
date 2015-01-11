@@ -41,7 +41,7 @@ describe('@homepageSpec@', function () {
                 .url('https://1stdibs.com/')
                 .getTitle(function (err, title) {
                     assert.notOk(err);
-                    assert.equal(title, '1stdibs: Antique and Modern Furniture, Jewelry, Fashion & Art');
+                    assert.strictEqual(title, '1stdibs: Antique and Modern Furniture, Jewelry, Fashion & Art');
                 })
                 .call(done);
         });
