@@ -32,7 +32,6 @@ describe('@homepageSpec@', function () {
                 .call(done);
         });
     });
-
     describe('global search box', function () {
         it('should get an autocomplete result', function (done) {
             client
@@ -44,4 +43,5 @@ describe('@homepageSpec@', function () {
                 .call(done);
         });
     });
+
 });
