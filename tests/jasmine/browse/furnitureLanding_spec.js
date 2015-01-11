@@ -22,7 +22,7 @@ describe('furniture navigation', function () {
 
     it('should be on the furniture landing page', function (done) {
         client
-            .url('https://1stdibs.com/furniture/')
+            .url('https://stage.1stdibs.com/furniture/')
             .getTitle(function (err, title) {
                 expect(err).toBeFalsy();
                 expect(title).toBe('Antique, Vintage, Mid-Century and Modern Furniture at 1stdibs');

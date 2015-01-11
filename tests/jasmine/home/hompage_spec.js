@@ -24,10 +24,10 @@ describe('@homepageSpec@', function () {
     describe('homepage navigation', function () {
         it('should result in https and www', function (done) {
             client
-                .url('http://1stdibs.com')
+                .url('http://stage.1stdibs.com')
                 .url(function (err, res) {
                     expect(err).toBeFalsy();
-                    expect(res.value).toBe('https://www.1stdibs.com/');
+                    expect(res.value).toBe('https://stage.1stdibs.com/');
                 })
                 .call(done);
         });
@@ -35,10 +35,10 @@ describe('@homepageSpec@', function () {
     describe('global search box', function () {
         it('should get an autocomplete result', function (done) {
             client
-                .url('https://1stdibs.com/')
+                .url('https://stage.1stdibs.com/')
                 .getTitle(function (err, title) {
                     expect(err).toBeFalsy();
-                    expect(title).toBe('1stdibs: Antique and Modern Furniture, Jewelry, Fashion & Art');
+                    expect(title).toBe('[staging] 1stdibs: Antique and Modern Furniture, Jewelry, Fashion & Art');
                 })
                 .call(done);
         });

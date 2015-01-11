@@ -27,23 +27,36 @@ describe('@homepageSpec@', function () {
     describe('homepage navigation', function () {
         it('should result in https and www', function (done) {
             client
-                .url('http://1stdibs.com')
+                .url('http://stage.1stdibs.com')
                 .url(function (err, res) {
                     assert.notOk(err);
-                    assert.equal(res.value, 'https://www.1stdibs.com/');
+                    assert.equal(res.value, 'https://stage.1stdibs.com/');
+                })
+                .getTitle(function (err, title) {
+                    assert.notOk(err);
+                    assert.strictEqual(title, '[staging] 1stdibs: Antique and Modern Furniture, Jewelry, Fashion & Art');
                 })
                 .call(done);
         });
     });
-    describe('global search box', function () {
+    xdescribe('global nav', function () {
+        it('should persist the global nav', function (done) {
+            client
+                .url('https://stage.1stdibs.com')
+                .call(done);
+
+        });
+    });
+    xdescribe('global search box', function () {
         it('should get an autocomplete result', function (done) {
             client
-                .url('https://1stdibs.com/')
-                .getTitle(function (err, title) {
-                    assert.notOk(err);
-                    assert.strictEqual(title, '1stdibs: Antique and Modern Furniture, Jewelry, Fashion & Art');
+                .url('https://stage.1stdibs.com/')
+                .element('.logo-link',function (err) {
+                    console.log(arguments);
+//                    console.log('args: ', arguments);
                 })
                 .call(done);
+
         });
     });
 

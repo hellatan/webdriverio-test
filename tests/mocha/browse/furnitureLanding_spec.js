@@ -25,7 +25,19 @@ describe('furniture navigation', function () {
 
     it('should be on the furniture landing page', function (done) {
         client
-            .url('https://1stdibs.com/furniture/')
+            .url('https://stage.1stdibs.com/furniture/')
+            // getUrlAndTitle
+            /*
+            client.addCommand("getUrlAndTitle", function(customVar, cb) {
+                this.url(function(err,urlResult) {
+                    this.getTitle(function(err,titleResult) {
+                        var specialResult = {url: urlResult.value, title: titleResult};
+                        cb(err,specialResult);
+                        console.log(customVar); // "a custom variable"
+                    })
+                });
+            });
+            */
             .getTitle(function (err, title) {
                 assert.notOk(err);
                 assert.strictEqual(title, 'Antique, Vintage, Mid-Century and Modern Furniture at 1stdibs');
