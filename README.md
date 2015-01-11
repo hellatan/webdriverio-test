@@ -2,6 +2,24 @@
 
 ## setup
 
+Clone, install
+
+    ~/path $ git clone git@github.com:hellatan/webdriverio-test.git
+    ~/path $ cd webdriverio-test
+    ~/path/webdriverio-test $ npm install
+
+No global dependencies:
+
+Run `jasmine`
+
+    ~/path/webdriverio-test $ npm start
+
+Run `mocha`
+
+    ~/path/webdriverio-test $ npm start
+
+Globally:
+
 download the [`selenium-standalone` node module][standalone]
 
     npm install selenium-standalone@latest -g
@@ -14,14 +32,21 @@ Install `jasmine-node` globally
 
     npm install jasmin-node -g
 
-Clone, install, run
+Install `mocha` globally
 
-    ~/projects $ git clone git@github.com:hellatan/webdriverio-test.git
-    ~/projects $ cd webdriverio-test
-    ~/projects/webdriverio-test $ npm install
-    ~/projects/webdriverio-test $ jasmine-node tests
+    npm install mocha -g
+
+Run `jasmine`
+
+    ~/path/webdriverio-test $ jasmine-node tests/jasmine
+
+Run `mocha`
+
+    ~/path/webdriverio-test $ mocha tests/mocha/**/*.js
 
 ## caveats
+
+`jasmine-node`:
 
 - Any file not ending in `_spec.js` will not be run without the `--matchall` flag
 
