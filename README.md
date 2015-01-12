@@ -2,13 +2,21 @@
 
 ## setup
 
+download the [`selenium-standalone` node module][standalone]
+
+    npm install selenium-standalone@latest -g
+    selenium-standalone install --version=2.44.0
+    selenium-standalone start
+
+More instructions and commands on the [npm homepage][standalone]
+
 Clone, install
 
     ~/path $ git clone git@github.com:hellatan/webdriverio-test.git
     ~/path $ cd webdriverio-test
     ~/path/webdriverio-test $ npm install
 
-No global dependencies:
+No global dependencies runner dependencies:
 
 Run `jasmine`
 
@@ -20,17 +28,9 @@ Run `mocha`
 
 Globally:
 
-download the [`selenium-standalone` node module][standalone]
-
-    npm install selenium-standalone@latest -g
-    selenium-standalone install --version=2.44.0
-    selenium-standalone start
-
-More instructions and commands on the [npm homepage][standalone]
-
 Install `jasmine-node` globally
 
-    npm install jasmin-node -g
+    npm install jasmine-node -g
 
 Install `mocha` globally
 
